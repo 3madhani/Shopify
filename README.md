@@ -1,3 +1,3 @@
-# t_store
+# Shopify
 
 A new Flutter project.
