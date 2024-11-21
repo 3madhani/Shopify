@@ -30,7 +30,7 @@ class OnBoardingPage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const SizedBox(
-            height: AppSizes.spaceEtwItems,
+            height: AppSizes.spaceBtwItems,
           ),
           Text(
             subtitle,
