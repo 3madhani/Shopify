@@ -14,15 +14,14 @@ class LoginForm extends StatelessWidget {
             const EdgeInsets.symmetric(vertical: AppSizes.spaceBtwSections),
         child: Column(
           children: [
-            /// Email
+            // Email
             TextFormField(
               decoration: const InputDecoration(
                   prefixIcon: Icon(Iconsax.direct_right),
                   labelText: AppTexts.email),
             ), // TextFormField
             const SizedBox(height: AppSizes.spaceBtwInputFields),
-
-            /// Password
+            // Password
             TextFormField(
               decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.password_check),
@@ -31,25 +30,23 @@ class LoginForm extends StatelessWidget {
               ), // InputDecoration
             ), // TextFormField
             const SizedBox(height: AppSizes.spaceBtwInputFields / 2),
-
-            /// Remember Me & Forget Password
+            // Remember Me & Forget Password
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                /// Remember He
+                // Remember me
                 Row(children: [
                   Checkbox(value: true, onChanged: (value) {}),
                   const Text(AppTexts.rememberMe),
                 ]),
-
-                /// Forget Password
+                // Forget Password
                 TextButton(
-                    onPressed: () {}, child: const Text(AppTexts.forgetPassword)),
+                    onPressed: () {},
+                    child: const Text(AppTexts.forgetPassword)),
               ],
             ),
             const SizedBox(height: AppSizes.spaceBtwSections),
-
-            /// Sign In Button
+            // Sign In Button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -58,8 +55,7 @@ class LoginForm extends StatelessWidget {
               ),
             ),
             const SizedBox(height: AppSizes.spaceBtwSections),
-
-            /// Create Account Button
+            // Create Account Button
             SizedBox(
                 width: double.infinity,
                 child: OutlinedButton(

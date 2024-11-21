@@ -28,12 +28,12 @@ class OnboardingScreen extends StatelessWidget {
                 subtitle: AppTexts.onBoardingSubTitle1,
               ),
               OnBoardingPage(
-                image: AppImages.onBoardingImage1,
+                image: AppImages.onBoardingImage2,
                 title: AppTexts.onBoardingTitle2,
                 subtitle: AppTexts.onBoardingSubTitle2,
               ),
               OnBoardingPage(
-                image: AppImages.onBoardingImage1,
+                image: AppImages.onBoardingImage3,
                 title: AppTexts.onBoardingTitle3,
                 subtitle: AppTexts.onBoardingSubTitle3,
               ),
@@ -47,4 +47,3 @@ class OnboardingScreen extends StatelessWidget {
     );
   }
 }
-
