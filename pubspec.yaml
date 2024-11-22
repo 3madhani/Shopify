@@ -7,6 +7,7 @@ environment:
   sdk: ^3.5.4
 
 dependencies:
+  cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
   flutter_native_splash: ^2.4.2
@@ -32,6 +33,7 @@ flutter:
   assets:
     - assets/logos/
     - assets/images/on_boarding_images/
+    - assets/images/animations/
     - assets/icons/brands/
 
   fonts:
