@@ -40,12 +40,15 @@ class ForgetPassword extends StatelessWidget {
                 labelText: AppTexts.email,
               ),
             ),
+            const SizedBox(
+              height: AppSizes.spaceBtwSections,
+            ),
 
             // submit button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () => Get.to(
+                onPressed: () => Get.off(
                   () => const ResetPassword(),
                 ),
                 child: const Text(AppTexts.submit),
