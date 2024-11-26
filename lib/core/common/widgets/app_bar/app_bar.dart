@@ -8,7 +8,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   const AppAppBar({
     super.key,
     this.title,
-    this.showBackArrow = true,
+    this.showBackArrow = false,
     this.leadingIcon,
     this.actions,
     this.onLeadingPressed,
