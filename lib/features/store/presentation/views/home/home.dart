@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:t_store/core/common/widgets/appbar/appbar.dart';
 import '../../../../../core/common/widgets/custom_shapes/containers/primary_header_container.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -6,12 +7,16 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             PrimaryHeaderContainer(
-              child: Container(),
+              child: Column(
+                children: [
+                  AppAppBar(),
+                ],
+              ),
             ),
           ],
         ),

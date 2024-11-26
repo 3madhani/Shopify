@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:t_store/core/utils/constants/colors.dart';
+import 'package:t_store/core/utils/constants/sizes.dart';
 
 class AppAppBarTheme {
   AppAppBarTheme._();
@@ -9,8 +11,8 @@ class AppAppBarTheme {
     scrolledUnderElevation: 0,
     backgroundColor: Colors.transparent,
     surfaceTintColor: Colors.transparent,
-    iconTheme: IconThemeData(color: Colors.black, size: 24),
-    actionsIconTheme: IconThemeData(color: Colors.black, size: 24),
+    iconTheme: IconThemeData(color: AppColors.black, size: AppSizes.iconMd),
+    actionsIconTheme: IconThemeData(color: AppColors.black, size: AppSizes.iconMd),
     titleTextStyle: TextStyle(
         color: Colors.black, fontSize: 18, fontWeight: FontWeight.w600),
   );
@@ -21,9 +23,9 @@ class AppAppBarTheme {
     scrolledUnderElevation: 0,
     backgroundColor: Colors.transparent,
     surfaceTintColor: Colors.transparent,
-    iconTheme: IconThemeData(color: Colors.white, size: 24),
-    actionsIconTheme: IconThemeData(color: Colors.white, size: 24),
+    iconTheme: IconThemeData(color: AppColors.black, size: AppSizes.iconMd),
+    actionsIconTheme: IconThemeData(color: AppColors.white, size: AppSizes.iconMd),
     titleTextStyle: TextStyle(
-        color: Colors.white, fontSize: 18, fontWeight: FontWeight.w600),
+        color: AppColors.white, fontSize: 18, fontWeight: FontWeight.w600),
   );
 }
