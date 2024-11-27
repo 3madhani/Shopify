@@ -44,7 +44,7 @@ class VerticalImageText extends StatelessWidget {
                 child: SvgPicture.asset(
                   image,
                   fit: BoxFit.contain,
-                  color: AppColors.primary,
+                  color: AppColors.black,
                 ),
               ),
             ),

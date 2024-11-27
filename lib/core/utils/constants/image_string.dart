@@ -38,4 +38,15 @@ class AppImages {
       "assets/icons/categories/office-chair.svg";
   static const String jewelryIcon = "assets/icons/categories/diamond1.svg";
   static const String electronicsIcon = "assets/icons/categories/phone.svg";
+
+  // banner
+  static const String bannerImage1 = 'assets/images/banners/4035288.jpg';
+  static const String bannerImage2 = 'assets/images/banners/4442831.jpg';
+  static const String bannerImage3 = 'assets/images/banners/4639670.jpg';
+  static const String bannerImage4 =
+      'assets/images/banners/black_friday_web_banner_06.jpg';
+  static const String bannerImage5 =
+      'assets/images/banners/e781b49d-c571-48e4-b45d-f9bb933ab678.jpg';
+  static const String bannerImage6 =
+      'assets/images/banners/Kerfin7_NEA_2416.jpg';
 }
