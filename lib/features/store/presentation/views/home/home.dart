@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:t_store/core/utils/constants/colors.dart';
 import 'package:t_store/core/utils/constants/sizes.dart';
-import 'package:t_store/core/utils/device/device_utility.dart';
-import 'package:t_store/core/utils/helpers/helper_functions.dart';
 import '../../../../../core/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../../core/common/widgets/custom_shapes/containers/search_container.dart';
+import '../../../../../core/common/widgets/texts/section_heading.dart';
 import 'widgets/home_app_bar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,7 +11,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -21,28 +19,65 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   // AppBar
-                  HomeAppBar(),
-                  SizedBox(
+                  const HomeAppBar(),
+                  const SizedBox(
                     height: AppSizes.spaceBtwSections,
                   ),
                   // SearchBar
-                  SearchContainer(
+                  const SearchContainer(
                     text: 'Search in Store',
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: AppSizes.spaceBtwSections,
                   ),
                   // Categories
                   Padding(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                       left: AppSizes.defaultSpace,
                     ),
                     child: Column(
                       children: [
-                        AppSectionHeading(
+                        // Heading
+                        const AppSectionHeading(
                           title: 'Popular Categories',
                           showActionButton: false,
                         ),
+                        const SizedBox(
+                          height: AppSizes.spaceBtwItems,
+                        ),
+                        // Categories
+                        SizedBox(
+                          height: 80,
+                          child: ListView.builder(
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 6,
+                            itemBuilder: (_, index) {
+                              return Column(
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.all(AppSizes.sm),
+                                    width: 56,
+                                    height: 56,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(
+                                        100,
+                                      ),
+                                      color: AppColors.white,
+                                    ),
+                                    child: const Center(
+                                      child: Image(
+                                        image: AssetImage(''),
+                                        fit: BoxFit.cover,
+                                        color: AppColors.dark,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              );
+                            },
+                          ),
+                        )
                       ],
                     ),
                   )
@@ -55,4 +90,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
