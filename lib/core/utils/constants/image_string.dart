@@ -29,12 +29,13 @@ class AppImages {
 // static const String verifyIllustration = "assets/images/animations/Successfully Done.json";
 //--Category Icons
   static const String sportIcon = "assets/icons/categories/football.svg";
-  static const String clothIcon = "assets/icons/categories/clothes (1).svg";
-  static const String shoesIcon = "assets/icons/categories/shoes (1).svg";
+  static const String clothIcon = "assets/icons/categories/clothe.svg";
+  static const String shoesIcon = "assets/icons/categories/shoes.svg";
   static const String cosmeticsIcon = "assets/icons/categories/cosmetics.svg";
   static const String animalIcon = "assets/icons/categories/spaniel.svg";
   static const String toyIcon = "assets/icons/categories/stuffed-toy.svg";
-  static const String furnitureIcon = "assets/icons/categories/clothes (1).svg";
-  static const String jewelryIcon = "assets/icons/categories/office-chair.svg";
+  static const String furnitureIcon =
+      "assets/icons/categories/office-chair.svg";
+  static const String jewelryIcon = "assets/icons/categories/diamond1.svg";
   static const String electronicsIcon = "assets/icons/categories/phone.svg";
 }

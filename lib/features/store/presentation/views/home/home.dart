@@ -5,13 +5,14 @@ import '../../../../../core/common/widgets/custom_shapes/containers/primary_head
 import '../../../../../core/common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../../core/common/widgets/texts/section_heading.dart';
 import 'widgets/home_app_bar.dart';
+import 'widgets/home_categories.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -19,65 +20,35 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   // AppBar
-                  const HomeAppBar(),
-                  const SizedBox(
+                  HomeAppBar(),
+                  SizedBox(
                     height: AppSizes.spaceBtwSections,
                   ),
                   // SearchBar
-                  const SearchContainer(
+                  SearchContainer(
                     text: 'Search in Store',
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: AppSizes.spaceBtwSections,
                   ),
                   // Categories
                   Padding(
-                    padding: const EdgeInsets.only(
+                    padding: EdgeInsets.only(
                       left: AppSizes.defaultSpace,
                     ),
                     child: Column(
                       children: [
                         // Heading
-                        const AppSectionHeading(
+                        AppSectionHeading(
                           title: 'Popular Categories',
                           showActionButton: false,
+                          textColor: AppColors.white,
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: AppSizes.spaceBtwItems,
                         ),
                         // Categories
-                        SizedBox(
-                          height: 80,
-                          child: ListView.builder(
-                            shrinkWrap: true,
-                            scrollDirection: Axis.horizontal,
-                            itemCount: 6,
-                            itemBuilder: (_, index) {
-                              return Column(
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.all(AppSizes.sm),
-                                    width: 56,
-                                    height: 56,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(
-                                        100,
-                                      ),
-                                      color: AppColors.white,
-                                    ),
-                                    child: const Center(
-                                      child: Image(
-                                        image: AssetImage(''),
-                                        fit: BoxFit.cover,
-                                        color: AppColors.dark,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              );
-                            },
-                          ),
-                        )
+                        AppHomeCategories()
                       ],
                     ),
                   )
