@@ -28,6 +28,9 @@ class BrandShowCases extends StatelessWidget {
           const BrandCard(
             showBorder: false,
           ),
+          const SizedBox(
+            height: AppSizes.spaceBtwItems,
+          ),
           Row(
             children: images
                 .map((image) => brandTopProductImageWidget(image, context))

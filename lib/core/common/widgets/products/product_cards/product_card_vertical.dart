@@ -77,20 +77,23 @@ class ProductCardVertical extends StatelessWidget {
             const SizedBox(height: AppSizes.spaceBtwItems / 2),
 
             // details
-            const Padding(
-              padding: EdgeInsets.only(left: AppSizes.sm),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ProductTitleText(
-                    title: "Product Title",
-                    smallSize: true,
-                  ),
-                  SizedBox(height: AppSizes.spaceBtwItems / 2),
-                  BrandTitleWithVerifiedIcon(
-                    title: 'Nike',
-                  ),
-                ],
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: EdgeInsets.only(left: AppSizes.sm),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ProductTitleText(
+                      title: "Product Title",
+                      smallSize: true,
+                    ),
+                    SizedBox(height: AppSizes.spaceBtwItems / 2),
+                    BrandTitleWithVerifiedIcon(
+                      title: 'Nike',
+                    ),
+                  ],
+                ),
               ),
             ), // spacer
             const Spacer(),

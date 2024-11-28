@@ -5,10 +5,9 @@ import 'package:t_store/core/common/widgets/custom_shapes/containers/search_cont
 import 'package:t_store/core/common/widgets/layouts/grid_layout.dart';
 import 'package:t_store/core/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:t_store/core/common/widgets/texts/section_heading.dart';
-import 'package:t_store/core/utils/constants/image_string.dart';
 import 'package:t_store/core/utils/constants/sizes.dart';
+import 'package:t_store/features/store/presentation/views/store/widgets/category_tab.dart';
 import '../../../../../core/common/widgets/brands/brand_card.dart';
-import '../../../../../core/common/widgets/brands/brand_show_cases.dart';
 import '../../../../../core/utils/constants/colors.dart';
 import '../../../../../core/utils/helpers/helper_functions.dart';
 
@@ -104,66 +103,11 @@ class StoreScreen extends StatelessWidget {
           },
           body: const TabBarView(
             children: [
-              Padding(
-                padding: EdgeInsets.all(AppSizes.defaultSpace),
-                child: Column(children: [
-                  BrandShowCases(
-                    images: [
-                      AppImages.product1,
-                      AppImages.product2,
-                      AppImages.product3
-                    ],
-                  ),
-                ]),
-              ),
-              Padding(
-                padding: EdgeInsets.all(AppSizes.defaultSpace),
-                child: Column(children: [
-                  BrandShowCases(
-                    images: [
-                      AppImages.product1,
-                      AppImages.product2,
-                      AppImages.product3
-                    ],
-                  ),
-                ]),
-              ),
-              Padding(
-                padding: EdgeInsets.all(AppSizes.defaultSpace),
-                child: Column(children: [
-                  BrandShowCases(
-                    images: [
-                      AppImages.product1,
-                      AppImages.product2,
-                      AppImages.product3
-                    ],
-                  ),
-                ]),
-              ),
-              Padding(
-                padding: EdgeInsets.all(AppSizes.defaultSpace),
-                child: Column(children: [
-                  BrandShowCases(
-                    images: [
-                      AppImages.product1,
-                      AppImages.product2,
-                      AppImages.product3
-                    ],
-                  ),
-                ]),
-              ),
-              Padding(
-                padding: EdgeInsets.all(AppSizes.defaultSpace),
-                child: Column(children: [
-                  BrandShowCases(
-                    images: [
-                      AppImages.product1,
-                      AppImages.product2,
-                      AppImages.product3
-                    ],
-                  ),
-                ]),
-              ),
+              CategoryTab(),
+              CategoryTab(),
+              CategoryTab(),
+              CategoryTab(),
+              CategoryTab(),
             ],
           ),
         ),
