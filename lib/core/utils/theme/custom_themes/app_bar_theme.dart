@@ -12,7 +12,8 @@ class AppAppBarTheme {
     backgroundColor: Colors.transparent,
     surfaceTintColor: Colors.transparent,
     iconTheme: IconThemeData(color: AppColors.black, size: AppSizes.iconMd),
-    actionsIconTheme: IconThemeData(color: AppColors.black, size: AppSizes.iconMd),
+    actionsIconTheme:
+        IconThemeData(color: AppColors.black, size: AppSizes.iconMd),
     titleTextStyle: TextStyle(
         color: Colors.black, fontSize: 18, fontWeight: FontWeight.w600),
   );
@@ -24,7 +25,8 @@ class AppAppBarTheme {
     backgroundColor: Colors.transparent,
     surfaceTintColor: Colors.transparent,
     iconTheme: IconThemeData(color: AppColors.black, size: AppSizes.iconMd),
-    actionsIconTheme: IconThemeData(color: AppColors.white, size: AppSizes.iconMd),
+    actionsIconTheme:
+        IconThemeData(color: AppColors.white, size: AppSizes.iconMd),
     titleTextStyle: TextStyle(
         color: AppColors.white, fontSize: 18, fontWeight: FontWeight.w600),
   );

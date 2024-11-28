@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:t_store/core/common/widgets/app_bar/app_bar.dart';
+import 'package:t_store/core/common/widgets/app_bar/tab_bar.dart';
 import 'package:t_store/core/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:t_store/core/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:t_store/core/common/widgets/layouts/grid_layout.dart';
 import 'package:t_store/core/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:t_store/core/common/widgets/texts/section_heading.dart';
-import 'package:t_store/core/utils/constants/enums.dart';
-import 'package:t_store/core/utils/constants/image_string.dart';
 import 'package:t_store/core/utils/constants/sizes.dart';
-
-import '../../../../../core/common/widgets/images/circular_image.dart';
-import '../../../../../core/common/widgets/texts/brand_title_with_verified_icon.dart';
+import '../../../../../core/common/widgets/products/product_cards/brand_card.dart';
 import '../../../../../core/utils/constants/colors.dart';
 import '../../../../../core/utils/helpers/helper_functions.dart';
 
@@ -20,16 +17,19 @@ class StoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = AppHelperFunctions.isDarkMode(context);
-    return Scaffold(
-      appBar: AppAppBar(
-        title: Text('Store', style: Theme.of(context).textTheme.headlineMedium),
-        actions: [
-          CartCounterIcon(
-            onPressed: () {},
-          ),
-        ],
-      ),
-      body: NestedScrollView(
+    return DefaultTabController(
+      length: 5,
+      child: Scaffold(
+        appBar: AppAppBar(
+          title:
+              Text('Store', style: Theme.of(context).textTheme.headlineMedium),
+          actions: [
+            CartCounterIcon(
+              onPressed: () {},
+            ),
+          ],
+        ),
+        body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxScrolled) {
             return [
               SliverAppBar(
@@ -70,62 +70,65 @@ class StoreScreen extends StatelessWidget {
                         itemCount: 4,
                         mainAxisExtent: 80,
                         itemBuilder: (_, index) {
-                          return GestureDetector(
-                            onTap: () {},
-                            child: RoundedContainer(
-                              padding: const EdgeInsets.all(AppSizes.md),
-                              shadowBorder: true,
-                              backgroundColor: Colors.transparent,
-                              child: Row(
-                                children: [
-                                  // icon
-                                  Flexible(
-                                    child: CircularImage(
-                                      isNetworkImage: false,
-                                      image: AppImages.cosmeticsIcon,
-                                      backgroundColor: Colors.transparent,
-                                      overlayColor: dark
-                                          ? AppColors.white
-                                          : AppColors.black,
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: AppSizes.spaceBtwItems / 2,
-                                  ),
-                                  // Text
-                                  Expanded(
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        const BrandTitleWithVerifiedIcon(
-                                          title: 'Nike',
-                                          brandTextSize: TextSizes.large,
-                                        ),
-                                        Text(
-                                          '256 Products',
-                                          overflow: TextOverflow.ellipsis,
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .labelMedium,
-                                        )
-                                      ],
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
+                          return const BrandCard(
+                            showBorder: false,
                           );
                         },
                       ),
                     ],
                   ),
                 ),
-              )
+                // tabs
+                bottom: const AppTabBar(
+                  tabs: [
+                    Tab(
+                      child: Text('Sports'),
+                    ),
+                    Tab(
+                      child: Text('Furniture'),
+                    ),
+                    Tab(
+                      child: Text('Electronics'),
+                    ),
+                    Tab(
+                      child: Text('Clothes'),
+                    ),
+                    Tab(
+                      child: Text('Cosmetics'),
+                    ),
+                  ],
+                ),
+              ),
             ];
           },
-          body: Container()),
+          body: const TabBarView(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(AppSizes.defaultSpace),
+                child:Column(
+                  children: [
+                    RoundedContainer(
+                      shadowBorder: true,
+                      borderColor: AppColors.darkGrey,
+                      backgroundColor: Colors.transparent,
+                      margin: EdgeInsets.only(
+                        bottom: AppSizes.spaceBtwItems,
+                      ),
+                      child: Column(
+                        children: [
+
+                          // brand card
+                          BrandCard(showBorder: false,),
+                        ],
+                      ),
+                    )
+                  ],
+                ) ,
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

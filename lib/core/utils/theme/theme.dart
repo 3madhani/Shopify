@@ -4,6 +4,7 @@ import 'package:t_store/core/utils/theme/custom_themes/bottom_sheet_theme.dart';
 import 'package:t_store/core/utils/theme/custom_themes/elevated_button_theme.dart';
 import 'package:t_store/core/utils/theme/custom_themes/text_field_theme.dart';
 import 'package:t_store/core/utils/theme/custom_themes/text_theme.dart';
+import '../constants/colors.dart';
 import 'custom_themes/checkbox_theme.dart';
 import 'custom_themes/outlined_button_theme.dart';
 
@@ -15,7 +16,7 @@ class AppTheme {
     fontFamily: "Poppins",
     brightness: Brightness.light,
     primaryColor: Colors.blue,
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: AppColors.white,
     textTheme: AppTextTheme.lightTextTheme,
     elevatedButtonTheme: AppElevatedButtonTheme.lightElevatedButtonTheme,
     appBarTheme: AppAppBarTheme.lightAppBarTheme,
@@ -29,7 +30,7 @@ class AppTheme {
     fontFamily: "Poppins",
     brightness: Brightness.dark,
     primaryColor: Colors.blue,
-    scaffoldBackgroundColor: Colors.black,
+    scaffoldBackgroundColor: AppColors.black,
     textTheme: AppTextTheme.darkTextTheme,
     elevatedButtonTheme: AppElevatedButtonTheme.darkElevatedButtonTheme,
     appBarTheme: AppAppBarTheme.darkAppBarTheme,
