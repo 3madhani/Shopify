@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:t_store/core/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:t_store/core/utils/constants/colors.dart';
 import 'package:t_store/core/utils/constants/image_string.dart';
 import 'package:t_store/core/utils/constants/sizes.dart';
@@ -59,17 +60,27 @@ class HomeScreen extends StatelessWidget {
             ),
             // body
             Padding(
-                padding: EdgeInsets.all(AppSizes.defaultSpace),
-                child: PromoSlider(
-                  banners: [
-                    AppImages.promoBanner1,
-                    AppImages.promoBanner2,
-                    AppImages.promoBanner3,
-                    AppImages.promoBanner4,
-                    AppImages.promoBanner5,
-                    AppImages.promoBanner6,
-                  ],
-                ))
+              padding: EdgeInsets.all(AppSizes.defaultSpace),
+              child: Column(
+                children: [
+                  PromoSlider(
+                    banners: [
+                      AppImages.promoBanner1,
+                      AppImages.promoBanner2,
+                      AppImages.promoBanner3,
+                      AppImages.promoBanner4,
+                      AppImages.promoBanner5,
+                      AppImages.promoBanner6,
+                    ],
+                  ),
+                  SizedBox(
+                    height: AppSizes.spaceBtwSections,
+                  ),
+                  // popular products
+                  ProductCardVertical(),
+                ],
+              ),
+            ),
           ],
         ),
       ),
