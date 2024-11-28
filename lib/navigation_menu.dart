@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/core/utils/constants/colors.dart';
 import 'package:t_store/features/store/presentation/views/home/home.dart';
+import 'package:t_store/features/store/presentation/views/store/store.dart';
 
 import 'core/utils/helpers/helper_functions.dart';
 
@@ -41,9 +42,7 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomeScreen(),
-    Container(
-      color: Colors.green,
-    ),
+    const StoreScreen(),
     Container(
       color: Colors.orange,
     ),
