@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/helpers/helper_functions.dart';
@@ -41,12 +39,10 @@ class VerticalImageText extends StatelessWidget {
                     (dark ? AppColors.black : AppColors.white),
               ),
               child: Center(
-                child: SvgPicture.asset(
-                  image,
-                  fit: BoxFit.contain,
-                  color: AppColors.black,
-                ),
-              ),
+                  child: Image(
+                image: AssetImage(image),
+                fit: BoxFit.cover,
+              )),
             ),
             // Text
             const SizedBox(

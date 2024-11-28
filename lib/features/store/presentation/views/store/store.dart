@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:t_store/core/common/widgets/app_bar/app_bar.dart';
+import 'package:t_store/core/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:t_store/core/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:t_store/core/common/widgets/layouts/grid_layout.dart';
 import 'package:t_store/core/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:t_store/core/common/widgets/texts/section_heading.dart';
+import 'package:t_store/core/utils/constants/enums.dart';
+import 'package:t_store/core/utils/constants/image_string.dart';
 import 'package:t_store/core/utils/constants/sizes.dart';
 
+import '../../../../../core/common/widgets/images/circular_image.dart';
+import '../../../../../core/common/widgets/texts/brand_title_with_verified_icon.dart';
 import '../../../../../core/utils/constants/colors.dart';
 import '../../../../../core/utils/helpers/helper_functions.dart';
 
@@ -59,9 +65,60 @@ class StoreScreen extends StatelessWidget {
                       ),
                       const SizedBox(
                         height: AppSizes.spaceBtwItems / 1.5,
-
                       ),
-                      
+                      GridLayout(
+                        itemCount: 4,
+                        mainAxisExtent: 80,
+                        itemBuilder: (_, index) {
+                          return GestureDetector(
+                            onTap: () {},
+                            child: RoundedContainer(
+                              padding: const EdgeInsets.all(AppSizes.md),
+                              shadowBorder: true,
+                              backgroundColor: Colors.transparent,
+                              child: Row(
+                                children: [
+                                  // icon
+                                  Flexible(
+                                    child: CircularImage(
+                                      isNetworkImage: false,
+                                      image: AppImages.cosmeticsIcon,
+                                      backgroundColor: Colors.transparent,
+                                      overlayColor: dark
+                                          ? AppColors.white
+                                          : AppColors.black,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: AppSizes.spaceBtwItems / 2,
+                                  ),
+                                  // Text
+                                  Expanded(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const BrandTitleWithVerifiedIcon(
+                                          title: 'Nike',
+                                          brandTextSize: TextSizes.large,
+                                        ),
+                                        Text(
+                                          '256 Products',
+                                          overflow: TextOverflow.ellipsis,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .labelMedium,
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      ),
                     ],
                   ),
                 ),
