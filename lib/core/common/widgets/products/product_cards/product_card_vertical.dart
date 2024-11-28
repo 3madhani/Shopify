@@ -10,6 +10,7 @@ import '../../../../utils/constants/colors.dart';
 import '../../../../utils/helpers/helper_functions.dart';
 import '../../icons/circular_icon.dart';
 import '../../images/rounded_image.dart';
+import '../../texts/product_price_text.dart';
 
 class ProductCardVertical extends StatelessWidget {
   const ProductCardVertical({super.key});
@@ -37,7 +38,7 @@ class ProductCardVertical extends StatelessWidget {
               child: Stack(
                 children: [
                   const RoundedImage(
-                    imageUrl: AppImages.product1,
+                    imageUrl: AppImages.product5,
                     applyImageRadius: true,
                   ),
                   // sale tag
@@ -58,9 +59,9 @@ class ProductCardVertical extends StatelessWidget {
                       ),
                     ),
                   ),
-      
+
                   // favorite icon
-      
+
                   const Positioned(
                     top: 0,
                     right: 0,
@@ -73,7 +74,7 @@ class ProductCardVertical extends StatelessWidget {
               ),
             ),
             const SizedBox(height: AppSizes.spaceBtwItems / 2),
-      
+
             // details
             Padding(
               padding: const EdgeInsets.only(left: AppSizes.sm),
@@ -103,37 +104,40 @@ class ProductCardVertical extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        '\$35.5',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.headlineMedium,
-                      ),
-                      Container(
-                        decoration: const BoxDecoration(
-                          color: AppColors.dark,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(AppSizes.cardRadiusMd),
-                            bottomRight:
-                                Radius.circular(AppSizes.productImageRadius),
-                          ),
-                        ),
-                        child: const SizedBox(
-                          width: AppSizes.iconLg * 1.2,
-                          height: AppSizes.iconLg * 1.2,
-                          child: Icon(
-                            Iconsax.add,
-                            color: AppColors.white,
-                          ),
-                        ),
-                      )
-                    ],
-                  )
                 ],
               ),
+            ), // spacer
+            const Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(
+                    left: AppSizes.sm,
+                  ),
+                  child: ProductPriceText(
+                    price: '35.5',
+                  ),
+                ),
+                // add to cart
+                Container(
+                  decoration: const BoxDecoration(
+                    color: AppColors.dark,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(AppSizes.cardRadiusMd),
+                      bottomRight: Radius.circular(AppSizes.productImageRadius),
+                    ),
+                  ),
+                  child: const SizedBox(
+                    width: AppSizes.iconLg * 1.2,
+                    height: AppSizes.iconLg * 1.2,
+                    child: Icon(
+                      Iconsax.add,
+                      color: AppColors.white,
+                    ),
+                  ),
+                )
+              ],
             )
           ],
         ),

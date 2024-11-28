@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:t_store/core/common/widgets/layouts/grid_layout.dart';
 import 'package:t_store/core/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:t_store/core/utils/constants/colors.dart';
 import 'package:t_store/core/utils/constants/image_string.dart';
@@ -15,11 +16,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            PrimaryHeaderContainer(
+            const PrimaryHeaderContainer(
               child: Column(
                 children: [
                   // AppBar
@@ -60,10 +61,10 @@ class HomeScreen extends StatelessWidget {
             ),
             // body
             Padding(
-              padding: EdgeInsets.all(AppSizes.defaultSpace),
+              padding: const EdgeInsets.all(AppSizes.defaultSpace),
               child: Column(
                 children: [
-                  PromoSlider(
+                  const PromoSlider(
                     banners: [
                       AppImages.promoBanner1,
                       AppImages.promoBanner2,
@@ -73,11 +74,22 @@ class HomeScreen extends StatelessWidget {
                       AppImages.promoBanner6,
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: AppSizes.spaceBtwSections,
                   ),
+
+                  // Heading
+                  const AppSectionHeading(
+                    title: 'Popular Products',
+                  ),
+                  const SizedBox(
+                    height: AppSizes.spaceBtwItems,
+                  ),
+                  
                   // popular products
-                  ProductCardVertical(),
+                  GridLayout(
+                      itemCount: 8,
+                      itemBuilder: (_, index) => const ProductCardVertical()),
                 ],
               ),
             ),
