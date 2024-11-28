@@ -12,47 +12,53 @@ class SearchContainer extends StatelessWidget {
     this.icon = Iconsax.search_normal,
     this.showBackground = true,
     this.showBorder = true,
+    this.padding =
+        const EdgeInsets.symmetric(horizontal: AppSizes.defaultSpace),
+    this.onTap,
   });
 
   final String text;
   final IconData? icon;
+  final VoidCallback? onTap;
   final bool showBackground, showBorder;
+  final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) {
     final dark = AppHelperFunctions.isDarkMode(context);
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: AppSizes.defaultSpace,
-      ),
-      child: Container(
-        width: AppDeviceUtils.getScreenWidth(context),
-        padding: const EdgeInsets.all(
-          AppSizes.md,
-        ),
-        decoration: BoxDecoration(
-          color: showBackground
-              ? dark
-                  ? AppColors.dark
-                  : AppColors.light
-              : Colors.transparent,
-          borderRadius: BorderRadius.circular(
-            AppSizes.cardRadiusLg,
+    return GestureDetector(
+      onTap: onTap,
+      child: Padding(
+        padding: padding,
+        child: Container(
+          width: AppDeviceUtils.getScreenWidth(context),
+          padding: const EdgeInsets.all(
+            AppSizes.md,
           ),
-          border: showBorder ? Border.all(color: AppColors.grey) : null,
-        ),
-        child: Row(
-          children: [
-            const Icon(
-              Iconsax.search_normal,
-              color: AppColors.darkerGrey,
+          decoration: BoxDecoration(
+            color: showBackground
+                ? dark
+                    ? AppColors.dark
+                    : AppColors.light
+                : Colors.transparent,
+            borderRadius: BorderRadius.circular(
+              AppSizes.cardRadiusLg,
             ),
-            const SizedBox(width: AppSizes.spaceBtwItems),
-            Text(
-              text,
-              style: Theme.of(context).textTheme.bodySmall,
-            )
-          ],
+            border: showBorder ? Border.all(color: AppColors.grey) : null,
+          ),
+          child: Row(
+            children: [
+              Icon(
+                Iconsax.search_normal,
+                color: dark ? AppColors.darkerGrey : AppColors.grey,
+              ),
+              const SizedBox(width: AppSizes.spaceBtwItems),
+              Text(
+                text,
+                style: Theme.of(context).textTheme.bodySmall,
+              )
+            ],
+          ),
         ),
       ),
     );
