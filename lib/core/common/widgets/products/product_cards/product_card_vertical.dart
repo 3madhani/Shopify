@@ -77,15 +77,15 @@ class ProductCardVertical extends StatelessWidget {
             const SizedBox(height: AppSizes.spaceBtwItems / 2),
 
             // details
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: EdgeInsets.only(left: AppSizes.sm),
+            const Padding(
+              padding: EdgeInsets.only(left: AppSizes.sm),
+              child: SizedBox(
+                width: double.infinity,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ProductTitleText(
-                      title: "Product Title",
+                      title: "Product Title ",
                       smallSize: true,
                     ),
                     SizedBox(height: AppSizes.spaceBtwItems / 2),
@@ -97,6 +97,7 @@ class ProductCardVertical extends StatelessWidget {
               ),
             ), // spacer
             const Spacer(),
+            // price
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
