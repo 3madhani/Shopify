@@ -9,7 +9,7 @@ class VerticalImageText extends StatelessWidget {
     required this.image,
     required this.title,
     this.textColor = AppColors.white,
-    this.backgroundColor = AppColors.white,
+    this.backgroundColor,
     this.onTap,
   });
 
@@ -42,6 +42,7 @@ class VerticalImageText extends StatelessWidget {
                   child: Image(
                 image: AssetImage(image),
                 fit: BoxFit.cover,
+                color: dark ? AppColors.white : AppColors.black,
               )),
             ),
             // Text
