@@ -31,10 +31,11 @@ class AppSectionHeading extends StatelessWidget {
         ),
         if (showActionButton)
           TextButton(
-              onPressed: onPressed,
-              child: Text(
-                buttonTitle,
-              ))
+            onPressed: onPressed,
+            child: Text(
+              buttonTitle,
+            ),
+          ),
       ],
     );
   }

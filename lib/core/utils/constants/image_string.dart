@@ -51,22 +51,17 @@ class AppImages {
       'assets/images/banners/Kerfin7_NEA_2416.jpg';
 
   // user
-  static const String user= "assets/images/user/user.png";
+  static const String user = "assets/images/user/user.png";
 
   // products
-  static const String product1 =
-      'assets/images/products/5a146762-db0a-48b1-8817-4bbe7af45a84.jpg';
-  static const String product2 =
-      'assets/images/products/38d2461a-d680-42d6-972a-562068540447.jpg';
-  static const String product3 =
-      'assets/images/products/222046923_cee18cde-8dbd-4316-a7ff-3eb19e49d11c.jpg';
-  static const String product4 =
-      'assets/images/products/c460088f-5310-485a-8544-10fcba27991a.jpg';
-  static const String product5 = 'assets/images/products/men-shoes.jpg';
-  static const String product6 = 'assets/images/products/shoes.jpg';
-  static const String product7 =
-      'assets/images/products/sneaker-that-has-word-nike-it.jpg';
-  static const String product8 = 'assets/images/products/8.png';
-  static const String product9 = 'assets/images/products/9.png';
-  static const String product10 = 'assets/images/products/10.png';
+  static const String product1 = 'assets/images/products/pngegg.png';
+  static const String product2 = 'assets/images/products/pngegg1.png';
+  static const String product3 = 'assets/images/products/pngegg2.png';
+  static const String product4 = 'assets/images/products/pngegg3.png';
+  static const String product5 = 'assets/images/products/pngegg4.png';
+  static const String product6 = 'assets/images/products/pngegg5.png';
+  static const String product7 = 'assets/images/products/pngegg6.png';
+  static const String product8 = 'assets/images/products/pngegg7.png';
+  static const String product9 = 'assets/images/products/pngegg8.png';
+  static const String product10 = 'assets/images/products/pngegg9.png';
 }
