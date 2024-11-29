@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:readmore/readmore.dart';
+import 'package:t_store/core/common/widgets/texts/section_heading.dart';
 import 'package:t_store/core/utils/constants/sizes.dart';
 import 'package:t_store/features/shop/presentation/views/product_details/widgets/product_attributes.dart';
 import 'package:t_store/features/shop/presentation/views/product_details/widgets/product_meta_data.dart';
@@ -11,35 +14,70 @@ class ProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             // product image
-            ProductImageSlider(),
+            const ProductImageSlider(),
 
             // product details
             Padding(
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                   right: AppSizes.defaultSpace,
                   left: AppSizes.defaultSpace,
                   bottom: AppSizes.defaultSpace),
               child: Column(
                 children: [
                   // Rating & share button
-                  RatingAndShare(),
+                  const RatingAndShare(),
 
                   // product meta data
-                  ProductMetaData(),
+                  const ProductMetaData(),
 
                   // Attributes
-                  ProductAttributes(),
+                  const ProductAttributes(),
+
+                  const SizedBox(height: AppSizes.spaceBtwSections),
 
                   // checkout button
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                        onPressed: () {}, child: const Text('Checkout')),
+                  ),
+
+                  const SizedBox(height: AppSizes.spaceBtwSections),
 
                   // description
+                  const AppSectionHeading(
+                      title: 'Description', showActionButton: false),
+                  const SizedBox(height: AppSizes.spaceBtwItems),
+                  const ReadMoreText(
+                    'This is a Product description for Blue Nike Sleeve less Vest. There are More Things That can be added in this Product',
+                    trimLines: 2,
+                    trimMode: TrimMode.Line,
+                    trimCollapsedText: ' Show more',
+                    trimExpandedText: ' Less',
+                    moreStyle:
+                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                    lessStyle:
+                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                  ),
 
                   // reviews
+                  const Divider(),
+                  const SizedBox(height: AppSizes.spaceBtwItems),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const AppSectionHeading(
+                          title: 'Reviews (199)', showActionButton: false),
+                      IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Iconsax.arrow_right_3, size: 18)),
+                    ],
+                  )
                 ],
               ),
             ),
