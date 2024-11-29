@@ -6,6 +6,7 @@ import 'package:t_store/core/utils/theme/custom_themes/text_field_theme.dart';
 import 'package:t_store/core/utils/theme/custom_themes/text_theme.dart';
 import '../constants/colors.dart';
 import 'custom_themes/checkbox_theme.dart';
+import 'custom_themes/chip_theme.dart';
 import 'custom_themes/outlined_button_theme.dart';
 
 class AppTheme {
@@ -24,10 +25,12 @@ class AppTheme {
     bottomSheetTheme: AppBottomSheetTheme.lightBottomSheetTheme,
     outlinedButtonTheme: AppOutlinedButtonTheme.lightOutlinedButtonTheme,
     inputDecorationTheme: AppTextFieldTheme.lightTextFieldTheme,
+    chipTheme: AppChipTheme.lightChipTheme,
   );
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     fontFamily: "Poppins",
+    disabledColor: AppColors.grey,
     brightness: Brightness.dark,
     primaryColor: AppColors.primary,
     scaffoldBackgroundColor: AppColors.black,
@@ -38,5 +41,6 @@ class AppTheme {
     bottomSheetTheme: AppBottomSheetTheme.darkBottomSheetTheme,
     outlinedButtonTheme: AppOutlinedButtonTheme.darkOutlinedButtonTheme,
     inputDecorationTheme: AppTextFieldTheme.darkTextFieldTheme,
+    chipTheme: AppChipTheme.darkChipTheme,
   );
 }

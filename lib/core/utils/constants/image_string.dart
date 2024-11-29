@@ -64,4 +64,15 @@ class AppImages {
   static const String product8 = 'assets/images/products/pngegg7.png';
   static const String product9 = 'assets/images/products/pngegg8.png';
   static const String product10 = 'assets/images/products/pngegg9.png';
+
+  // brands
+  static const String nike = 'assets/icons/brands/nike.png';
+  static const String adidas = 'assets/icons/brands/adidas.png';
+  static const String puma = 'assets/icons/brands/puma.png';
+  static const String reebok = 'assets/icons/brands/reebok.png';
+  static const String converse = 'assets/icons/brands/converse.png';
+  static const String vans = 'assets/icons/brands/vans.png';
+  static const String jordan = 'assets/icons/brands/jordan.png';
+  static const String newBalance = 'assets/icons/brands/newBalance.png';
+  static const String ikea = 'assets/icons/brands/ikea.png';
 }

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class AppHelperFunctions {
-  static Color? getHexColor(String value) {
+  static Color? getColor(String value) {
     if (value == 'Green') {
       return Colors.green;
     } else if (value == 'Red') {
@@ -12,6 +12,8 @@ class AppHelperFunctions {
       return Colors.blue;
     } else if (value == 'Yellow') {
       return Colors.yellow;
+    } else if (value == 'Orange') {
+      return Colors.orange;
     } else if (value == 'Pink') {
       return Colors.pink;
     } else if (value == 'Grey') {
@@ -114,4 +116,3 @@ class AppHelperFunctions {
     return wrappedWidgets;
   }
 }
-
