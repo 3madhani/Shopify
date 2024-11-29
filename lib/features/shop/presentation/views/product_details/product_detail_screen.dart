@@ -3,6 +3,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 import 'package:t_store/core/common/widgets/texts/section_heading.dart';
 import 'package:t_store/core/utils/constants/sizes.dart';
+import 'package:t_store/features/shop/presentation/views/product_details/widgets/bottom_add_cart.dart';
 import 'package:t_store/features/shop/presentation/views/product_details/widgets/product_attributes.dart';
 import 'package:t_store/features/shop/presentation/views/product_details/widgets/product_meta_data.dart';
 
@@ -15,6 +16,7 @@ class ProductDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: const BottomAddCart(),
       body: SingleChildScrollView(
         child: Column(
           children: [

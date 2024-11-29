@@ -88,13 +88,11 @@ class ProductAttributes extends StatelessWidget {
               spacing: 8,
               children: [
                 AppChoiceChip(
-                    text: 'Green', selected: true, onSelected: (value) {}),
+                    text: 'Green', selected: false, onSelected: (value) {}),
                 AppChoiceChip(
-                    text: 'Red', selected: false, onSelected: (value) {}),
+                    text: 'Yellow', selected: true, onSelected: (value) {}),
                 AppChoiceChip(
                     text: 'Blue', selected: false, onSelected: (value) {}),
-                AppChoiceChip(
-                    text: 'White', selected: true, onSelected: (value) {}),
               ],
             )
           ],
