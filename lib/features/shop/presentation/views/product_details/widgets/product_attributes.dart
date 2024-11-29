@@ -80,44 +80,41 @@ class ProductAttributes extends StatelessWidget {
 
         // Attributes
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const AppSectionHeading(title: 'Colors'),
+            const AppSectionHeading(title: 'Colors', showActionButton: false),
             const SizedBox(height: AppSizes.spaceBtwItems / 2),
-            AppChoiceChip(
-              text: 'Green',
-              selected: true,
-              onSelected: (value) {},
-            ),
-            AppChoiceChip(
-              text: 'Red',
-              selected: false,
-              onSelected: (value) {},
-            ),
-            AppChoiceChip(
-              text: 'Blue',
-              selected: false,
-              onSelected: (value) {},
+            Wrap(
+              spacing: 8,
+              children: [
+                AppChoiceChip(
+                    text: 'Green', selected: true, onSelected: (value) {}),
+                AppChoiceChip(
+                    text: 'Red', selected: false, onSelected: (value) {}),
+                AppChoiceChip(
+                    text: 'Blue', selected: false, onSelected: (value) {}),
+                AppChoiceChip(
+                    text: 'White', selected: true, onSelected: (value) {}),
+              ],
             )
           ],
         ),
         Column(
           children: [
-            const AppSectionHeading(title: 'Sizes'),
+            const AppSectionHeading(title: 'Sizes', showActionButton: false),
             const SizedBox(height: AppSizes.spaceBtwItems / 2),
-            AppChoiceChip(
-              text: 'EU 34',
-              selected: true,
-              onSelected: (value) {},
-            ),
-            AppChoiceChip(
-              text: 'EU 36',
-              selected: false,
-              onSelected: (value) {},
-            ),
-            AppChoiceChip(
-              text: 'EU 38',
-              selected: false,
-              onSelected: (value) {},
+            Wrap(
+              spacing: 6,
+              children: [
+                AppChoiceChip(
+                    text: 'EU 42', selected: true, onSelected: (value) {}),
+                AppChoiceChip(
+                    text: 'EU 36', selected: false, onSelected: (value) {}),
+                AppChoiceChip(
+                    text: 'EU 38', selected: false, onSelected: (value) {}),
+                AppChoiceChip(
+                    text: 'EU 34', selected: true, onSelected: (value) {}),
+              ],
             )
           ],
         )
