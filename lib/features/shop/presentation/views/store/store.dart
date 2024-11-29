@@ -6,7 +6,7 @@ import 'package:t_store/core/common/widgets/layouts/grid_layout.dart';
 import 'package:t_store/core/common/widgets/products/cart/cart_menu_icon.dart';
 import 'package:t_store/core/common/widgets/texts/section_heading.dart';
 import 'package:t_store/core/utils/constants/sizes.dart';
-import 'package:t_store/features/store/presentation/views/store/widgets/category_tab.dart';
+import 'package:t_store/features/shop/presentation/views/store/widgets/category_tab.dart';
 import '../../../../../core/common/widgets/brands/brand_card.dart';
 import '../../../../../core/utils/constants/colors.dart';
 import '../../../../../core/utils/helpers/helper_functions.dart';

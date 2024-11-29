@@ -6,7 +6,8 @@ import 'circular_container.dart';
 
 class PrimaryHeaderContainer extends StatelessWidget {
   const PrimaryHeaderContainer({
-    super.key, required this.child,
+    super.key,
+    required this.child,
   });
 
   final Widget child;
@@ -15,7 +16,6 @@ class PrimaryHeaderContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return CurvedEdgeWidget(
       child: Container(
-        height: 400,
         color: AppColors.primary,
         padding: const EdgeInsets.all(0),
         child: Stack(

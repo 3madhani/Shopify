@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:t_store/features/store/presentation/controllers/home_controller.dart';
+import 'package:t_store/features/shop/presentation/controllers/home_controller.dart';
 import '../../../../../../core/common/widgets/custom_shapes/containers/circular_container.dart';
 import '../../../../../../core/common/widgets/images/rounded_image.dart';
 import '../../../../../../core/utils/constants/colors.dart';

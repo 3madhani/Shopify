@@ -50,6 +50,9 @@ class AppImages {
   static const String promoBanner6 =
       'assets/images/banners/Kerfin7_NEA_2416.jpg';
 
+  // user
+  static const String user= "assets/images/user/user.png";
+
   // products
   static const String product1 =
       'assets/images/products/5a146762-db0a-48b1-8817-4bbe7af45a84.jpg';
