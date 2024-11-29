@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:t_store/core/common/widgets/app_bar/app_bar.dart';
 import 'package:t_store/core/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:t_store/core/common/widgets/texts/section_heading.dart';
+import 'package:t_store/features/personalization/presentation/views/profile/profile_screen.dart';
 import 'package:t_store/features/personalization/presentation/views/settings/widgets/settings_menu_tile.dart';
 
 import '../../../../../core/common/widgets/list_tiles/user_profile_tile.dart';
@@ -31,7 +33,9 @@ class SettingsScreen extends StatelessWidget {
                   ),
 
                   // user profile
-                  const UserProfileTile(),
+                  UserProfileTile(
+                    onPress:()=> Get.to(() => const ProfileScreen()),
+                  ),
                   const SizedBox(
                     height: AppSizes.spaceBtwSections,
                   ),

@@ -8,7 +8,10 @@ import '../images/circular_image.dart';
 class UserProfileTile extends StatelessWidget {
   const UserProfileTile({
     super.key,
+    required this.onPress,
   });
+
+  final VoidCallback onPress;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,7 @@ class UserProfileTile extends StatelessWidget {
             ),
       ),
       trailing: IconButton(
-          onPressed: () {},
+          onPressed: onPress,
           icon: const Icon(
             Iconsax.edit,
             color: AppColors.white,
