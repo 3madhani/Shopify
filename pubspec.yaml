@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_native_splash: ^2.4.2
+  flutter_rating_bar: ^4.0.1
   flutter_svg: ^2.0.15
   get: ^4.6.6
   get_storage: ^2.1.1
@@ -42,6 +43,7 @@ flutter:
     - assets/images/products/
     - assets/icons/brands/
     - assets/images/user/
+    - assets/images/reviews/
 
   fonts:
     - family: Poppins

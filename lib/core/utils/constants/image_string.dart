@@ -53,6 +53,11 @@ class AppImages {
   // user
   static const String user = "assets/images/user/user.png";
 
+  // products review
+  static const String review1 = 'assets/images/reviews/man.png';
+  static const String review2 = 'assets/images/reviews/2.png';
+  static const String review3 = 'assets/images/reviews/3.png';
+
   // products
   static const String product1 = 'assets/images/products/pngegg.png';
   static const String product2 = 'assets/images/products/pngegg1.png';

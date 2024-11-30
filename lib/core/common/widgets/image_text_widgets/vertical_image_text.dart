@@ -26,6 +26,7 @@ class VerticalImageText extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(right: AppSizes.spaceBtwItems),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               padding: const EdgeInsets.all(AppSizes.sm),
@@ -52,6 +53,7 @@ class VerticalImageText extends StatelessWidget {
             SizedBox(
               width: 55,
               child: Text(
+                textAlign: TextAlign.center,
                 title,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
