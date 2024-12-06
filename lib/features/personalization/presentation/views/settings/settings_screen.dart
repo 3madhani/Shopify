@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:shopify/core/common/widgets/app_bar/app_bar.dart';
 import 'package:shopify/core/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:shopify/core/common/widgets/texts/section_heading.dart';
+import 'package:shopify/features/authentication/data/repo/authentication/auth_repo.dart';
 import 'package:shopify/features/personalization/presentation/views/address/address_screen.dart';
 import 'package:shopify/features/personalization/presentation/views/profile/profile_screen.dart';
 import 'package:shopify/features/personalization/presentation/views/settings/widgets/settings_menu_tile.dart';
@@ -134,7 +135,10 @@ class SettingsScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
-                        onPressed: () {}, child: const Text('Logout')),
+                      onPressed: () =>
+                          AuthenticationRepository.instance.logout(),
+                      child: const Text('Logout'),
+                    ),
                   ),
                   const SizedBox(
                     height: AppSizes.spaceBtwSections * 2.5,

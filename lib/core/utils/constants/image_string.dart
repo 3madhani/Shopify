@@ -23,9 +23,11 @@ class AppImages {
 // static const String productsSaleIllustration = "assets/images/animations/sammy-Line-sale.png";
   static const String staticSuccessIllustration =
       "assets/images/animations/Successfully Done.json";
+  static const String successRegistration =
+      "assets/images/animations/successRegistration.json";
 // static const String deliveredInPlaneIllustration = "assets/images/animations/sammy-Line-come-back-later.png";
   static const String deliveredEmailIllustration =
-      "assets/images/animations/Mail Letter.json";
+      "assets/images/animations/sendEmail.json";
 // static const String verifyIllustration = "assets/images/animations/Successfully Done.json";
 //--Category Icons
   static const String sportIcon = "assets/icons/categories/football.png";
@@ -81,7 +83,6 @@ class AppImages {
   static const String acer = 'assets/icons/brands/acer.png';
   static const String ikea = 'assets/icons/brands/ikea.png';
   static const String kenwood = 'assets/icons/brands/kenwood.png';
-
 
   // payments
   static const String paypal = 'assets/icons/payment_methods/paypal.png';

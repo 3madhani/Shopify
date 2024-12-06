@@ -68,6 +68,10 @@ class SignUpController extends GetxController {
       final userRepo = Get.put(UserRepository());
 
       await userRepo.saveUserRecord(newUser);
+
+      // remove loading
+      FullScreenLoader.stopLoader();
+
       // show success
       Loaders.successSnackbar(
         title: 'Congratulations!',
@@ -81,10 +85,9 @@ class SignUpController extends GetxController {
       );
     } catch (e) {
       // show error
-      Loaders.errorSnackbar(title: 'Oh Snap!', message: e.toString());
-    } finally {
-      // remove loading
       FullScreenLoader.stopLoader();
+
+      Loaders.errorSnackbar(title: 'Oh Snap!', message: e.toString());
     }
   }
 }
