@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:987462243314:android:ee06bb9bd89b3ea3b2516b",
+        "mobilesdk_app_id": "1:987462243314:android:9510d9a93a5b1cf4b2516b",
         "android_client_info": {
-          "package_name": "com.shopify.app"
+          "package_name": "com.example.shopify"
         }
       },
       "oauth_client": [
@@ -31,10 +31,54 @@
               "client_type": 3
             },
             {
-              "client_id": "987462243314-6f97bbe19bga8uhbo9501eelkhsb6ial.apps.googleusercontent.com",
+              "client_id": "987462243314-4gndv53mfaah5h9fpjrkvjlqs70ocgio.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.rhythmia"
+                "bundle_id": "com.example.shopify"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:987462243314:android:ee06bb9bd89b3ea3b2516b",
+        "android_client_info": {
+          "package_name": "com.shopify.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "987462243314-5ongcmj140uqm5lapkocrq36iiciq7rb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shopify.app",
+            "certificate_hash": "d10a08f90906f9b3b8b35dc8c3fb568577a19086"
+          }
+        },
+        {
+          "client_id": "987462243314-seooli53uj8fknajqjurqjq95b9cufvv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA85AYkrL1okTjtM2b_WQI5J1CenReaQg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "987462243314-seooli53uj8fknajqjurqjq95b9cufvv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "987462243314-4gndv53mfaah5h9fpjrkvjlqs70ocgio.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.shopify"
               }
             }
           ]

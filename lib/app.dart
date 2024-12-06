@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shopify/core/bindings/general_bindings.dart';
 
+import 'core/utils/constants/colors.dart';
 import 'core/utils/theme/theme.dart';
-import 'features/authentication/presentation/views/onboarding/onboarding.dart';
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -14,7 +15,10 @@ class MainApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      home: const OnboardingScreen(),
+      initialBinding: GeneralBindings(),
+      home: const Scaffold(
+          backgroundColor: AppColors.primary,
+          body: Center(child: CircularProgressIndicator(color: Colors.white))),
     );
   }
 }

@@ -24,7 +24,8 @@ class SignUpForm extends StatelessWidget {
               Expanded(
                 child: TextFormField(
                   controller: controller.firstName,
-                  validator: (value) => AppValidator.validateEmpty('First name', value),
+                  validator: (value) =>
+                      AppValidator.validateEmpty('First name', value),
                   expands: false,
                   decoration: const InputDecoration(
                     labelText: AppTexts.firstName,
@@ -36,7 +37,8 @@ class SignUpForm extends StatelessWidget {
               Expanded(
                 child: TextFormField(
                   controller: controller.lastName,
-                  validator: (value) => AppValidator.validateEmpty('Last name', value),
+                  validator: (value) =>
+                      AppValidator.validateEmpty('Last name', value),
                   expands: false,
                   decoration: const InputDecoration(
                     labelText: AppTexts.lastName,
@@ -64,7 +66,6 @@ class SignUpForm extends StatelessWidget {
           TextFormField(
             controller: controller.email,
             validator: (value) => AppValidator.validateEmail(value),
-            expands: false,
             decoration: const InputDecoration(
               labelText: AppTexts.email,
               prefixIcon: Icon(Iconsax.direct),
@@ -76,8 +77,6 @@ class SignUpForm extends StatelessWidget {
           TextFormField(
             controller: controller.phoneNumber,
             validator: (value) => AppValidator.validatePhoneNumber(value),
-
-            expands: false,
             decoration: const InputDecoration(
               labelText: AppTexts.phoneNo,
               prefixIcon: Icon(Iconsax.call),
@@ -86,16 +85,20 @@ class SignUpForm extends StatelessWidget {
           const SizedBox(height: AppSizes.spaceBtwInputFields),
 
           // password
-          TextFormField(
-            controller: controller.password,
-            validator: (value) => AppValidator.validatePassword(value),
-
-            expands: false,
-            obscureText: true,
-            decoration: const InputDecoration(
-              labelText: AppTexts.password,
-              prefixIcon: Icon(Iconsax.password_check),
-              suffixIcon: Icon(Iconsax.eye_slash),
+          Obx(
+            () => TextFormField(
+              controller: controller.password,
+              validator: (value) => AppValidator.validatePassword(value),
+              obscureText: controller.hidePassword.value,
+              decoration: InputDecoration(
+                labelText: AppTexts.password,
+                prefixIcon: const Icon(Iconsax.password_check),
+                suffixIcon: IconButton(
+                    onPressed: () => controller.hidePassword.toggle(),
+                    icon: Icon(controller.hidePassword.value
+                        ? Iconsax.eye_slash
+                        : Iconsax.eye)),
+              ),
             ),
           ),
           const SizedBox(height: AppSizes.spaceBtwSections),
