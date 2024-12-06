@@ -9,6 +9,9 @@ import 'package:shopify/core/utils/exceptions/format_exceptions.dart';
 import 'package:shopify/core/utils/exceptions/platform_exceptions.dart';
 import 'package:shopify/features/authentication/presentation/views/login/login_screen.dart';
 import 'package:shopify/features/authentication/presentation/views/onboarding/onboarding.dart';
+import 'package:shopify/navigation_menu.dart';
+
+import '../../../presentation/views/signup/verify_email_screen.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
@@ -26,12 +29,21 @@ class AuthenticationRepository extends GetxController {
     screenRedirect();
   }
 
-  Future<void> screenRedirect() async {
-    deviceStorage.writeIfNull('IsFirstTime', true);
+  screenRedirect() async {
+    final user = _auth.currentUser;
+    if (user != null) {
+      if (user.emailVerified) {
+        Get.offAll(() => const NavigationMenu());
+      } else {
+        Get.offAll(() => VerifyEmailScreen(email: _auth.currentUser?.email));
+      }
+    } else {
+      deviceStorage.writeIfNull('IsFirstTime', true);
 
-    deviceStorage.read('IsFirstTime') != true
-        ? Get.offAll(() => const LoginScreen())
-        : Get.offAll(() => const OnboardingScreen());
+      deviceStorage.read('IsFirstTime') != true
+          ? Get.offAll(() => const LoginScreen())
+          : Get.offAll(() => const OnBoardingScreen());
+    }
   }
 
   // signin
@@ -56,4 +68,43 @@ class AuthenticationRepository extends GetxController {
       throw 'Something went wrong, please try again';
     }
   }
+
+  // mail verification
+  Future<void> sendEmailVerification() async {
+    try {
+      await _auth.currentUser?.sendEmailVerification();
+    } on FirebaseAuthException catch (e) {
+      throw AppFirebaseAuthExceptions(e.code).message;
+    } on FirebaseException catch (e) {
+      throw AppFirebaseExceptions(e.code).message;
+    } on FormatException catch (_) {
+      throw const AppFormatExceptions();
+    } on PlatformException catch (e) {
+      throw AppPlatformExceptions(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong, please try again';
+    }
+  }
+
+  // reauthenticate user
+
+  // signout
+  Future<void> logout() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      Get.offAll(() => const LoginScreen());
+    } on FirebaseAuthException catch (e) {
+      throw AppFirebaseAuthExceptions(e.code).message;
+    } on FirebaseException catch (e) {
+      throw AppFirebaseExceptions(e.code).message;
+    } on FormatException catch (_) {
+      throw const AppFormatExceptions();
+    } on PlatformException catch (e) {
+      throw AppPlatformExceptions(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong, please try again';
+    }
+  }
+
+  // delete account
 }
