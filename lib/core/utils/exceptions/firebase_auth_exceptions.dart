@@ -1,9 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class AppFirebaseAuthExceptions implements Exception {
   final String code;
-  AppFirebaseAuthExceptions(
-    this.code
-  );
+  AppFirebaseAuthExceptions(this.code);
 
   String get message {
     switch (code) {
@@ -11,6 +9,8 @@ class AppFirebaseAuthExceptions implements Exception {
         return 'The email address is not valid.';
       case 'user-disabled':
         return 'The user account has been disabled.';
+      case 'no-current-user':
+        return 'There is no user currently signed in.';
       case 'user-not-found':
         return 'No user found with this email.';
       case 'invalid-credential':

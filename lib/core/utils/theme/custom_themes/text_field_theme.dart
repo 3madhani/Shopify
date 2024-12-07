@@ -13,7 +13,8 @@ class AppTextFieldTheme {
         .copyWith(fontSize: AppSizes.fontSizeMd, color: AppColors.black),
     hintStyle: const TextStyle()
         .copyWith(fontSize: AppSizes.fontSizeSm, color: AppColors.black),
-    errorStyle: const TextStyle().copyWith(fontStyle: FontStyle.normal),
+    errorStyle: const TextStyle()
+        .copyWith(fontStyle: FontStyle.normal, color: Colors.red),
     floatingLabelStyle:
         const TextStyle().copyWith(color: AppColors.black.withOpacity(0.8)),
     border: const OutlineInputBorder().copyWith(
@@ -39,13 +40,15 @@ class AppTextFieldTheme {
   );
 
   static InputDecorationTheme darkTextFieldTheme = InputDecorationTheme(
-    errorMaxLines: 2,
+    errorMaxLines: 3,
     prefixIconColor: AppColors.darkGrey,
     suffixIconColor: AppColors.darkGrey,
     labelStyle: const TextStyle()
         .copyWith(fontSize: AppSizes.fontSizeMd, color: AppColors.white),
     hintStyle: const TextStyle()
         .copyWith(fontSize: AppSizes.fontSizeSm, color: AppColors.white),
+    errorStyle: const TextStyle()
+        .copyWith(fontStyle: FontStyle.normal, color: Colors.red),
     floatingLabelStyle:
         const TextStyle().copyWith(color: AppColors.white.withOpacity(0.8)),
     border: const OutlineInputBorder().copyWith(

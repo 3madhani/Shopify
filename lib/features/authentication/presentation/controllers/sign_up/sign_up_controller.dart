@@ -30,17 +30,26 @@ class SignUpController extends GetxController {
       // start loading
       FullScreenLoader.openLoadingDialog(
           'We are processing your information...',
-          AppImages.staticSuccessIllustration);
-
+          AppImages.successRegistration);
       // check internet connection
       final isConnected = await NetworkManager.instance.isConnected();
-      if (!isConnected) return;
+      if (!isConnected) {
+        // remove loading
+        FullScreenLoader.stopLoader();
+        return;
+      }
 
       // form validation
-      if (!signupFormKey.currentState!.validate()) return;
+      if (!signupFormKey.currentState!.validate()) {
+        // remove loading
+        FullScreenLoader.stopLoader();
+        return;
+      }
 
       // privacy policy
       if (!privacyPolicy.value) {
+        // remove loading
+        FullScreenLoader.stopLoader();
         Loaders.warningSnackbar(
           title: 'Accept Privacy Policy',
           message:
@@ -66,7 +75,6 @@ class SignUpController extends GetxController {
       );
 
       final userRepo = Get.put(UserRepository());
-
       await userRepo.saveUserRecord(newUser);
 
       // remove loading
@@ -84,9 +92,9 @@ class SignUpController extends GetxController {
         () => VerifyEmailScreen(email: email.text.trim()),
       );
     } catch (e) {
-      // show error
+      // remove loading
       FullScreenLoader.stopLoader();
-
+      // show error
       Loaders.errorSnackbar(title: 'Oh Snap!', message: e.toString());
     }
   }
